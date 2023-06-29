@@ -5,6 +5,15 @@ Pascal's Triangle
 
 
 def pascal_triangle(n):
+     '''
+    func: pascal_triangle
+        returns a list of lists of integers
+        representing the Pascal’s triangle of n
+    args:
+        <int: n> : number of rows (> 0)
+    return:
+        <list <of list>>
+    '''
     triangle = []
 
     if n <= 0:
