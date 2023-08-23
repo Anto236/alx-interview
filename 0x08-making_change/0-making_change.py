@@ -23,9 +23,10 @@ def makeChange(coins, total):
     """Base case: 0 coins are needed to make a total of 0"""
     min_coins[0] = 0
     """Iterate through each coin value and update the min_coins list"""
-    for coin in coins:
-        for i in range(coin, total + 1):
-            min_coins[i] = min(min_coins[i], min_coins[i - coin] + 1)
+    for i in range(1, total + 1):
+        for coin in coins:
+            if i >= coin:
+                min_coins[i] = min(min_coins[i], min_coins[i - coin] + 1)
     """If min_coins[total] is still infinity,
        it means the total cannot be made using the given coins
     """
